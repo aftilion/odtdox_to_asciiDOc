@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="../Css_files/outlines.css">
+
+
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+        <ul>
+            <li><a class="header-a">Конвертор odt/docx to AsciiDoc</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id = "intro">
+    <section class="content" id="contact">
+        <div class="container content__container">
+            <div class="content__about">
+                <h1 class="content__title">Необходимо выбрать файл , который нужно конвертировать:</h1>
+                    <div>
+                        <form method="POST" enctype="multipart/form-data" action="/upload">
+                            <table>
+                                <tr>Загрузите файл:</tr>
+                                <tr><input style="background: #f2f2f8; color= black;" type="file" name="file"></tr>
+                                <tr><input style="background: #f2f2f8; color= black;" type="submit" value="Конвертировать"></tr>
+                            </table>
+
+                            <tr>Выберите тип файла:</tr>
+                            <label>
+                                <select name="type">
+                                    <option value="docx">docx</option>
+                                    <option value="odt">odt</option>
+                                </select>
+                            </label>
+                        </form>
+                    </div>
+
+                <p class="content__description">
+                    <strong> В результате, вы получите ответ в формате adoc</strong>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+<footer>
+    <p>Афти Александр <span>©2022</span></p>
+</footer>
+</html>
+
+<style>
+*,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background: #f2f2f8;
+        line-height: normal;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1,
+    h2,
+    h3 {
+        margin: 0;
+    }
+
+    .header {
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        width: 100vw;
+        height: 100px;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        background: #f2f2f8;
+        z-index: 100;
+    }
+
+    .header li {
+        list-style-type: none;
+
+    }
+
+    nav ul {
+        display: flex;
+        padding: 20px 20px 20px 20px;
+        text-transform: capitalize;
+    }
+
+    nav ul li {
+        margin: 0 25px;
+        display: inline;
+        vertical-align: middle;
+    }
+
+
+    header a {
+        color: grey;
+        margin: auto;
+        font-size: 22px;
+        text-decoration: none;
+        transition: all .2s;
+    }
+
+    .header a:hover {
+        color: #4facfe;
+    }
+
+
+    section {
+        padding: 130px 80px;
+        min-height: 100vh;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        z-index: auto;
+    }
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        max-width: 1530px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .content__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax( 290px,1fr));
+        grid-gap: 20px;
+    }
+
+
+    .content__about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+
+    .content__slider {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .content__title {
+        font-size: 48px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .content__subtitle {
+        font-size: 24px;
+    }
+
+    .content__li {
+        font-size: 22px;
+        line-height: 1.1;
+    }
+
+    .content__description {
+        font-size: 20px;
+    }
+    .content__links {
+        display: flex;
+    }
+
+    .content__link {
+        margin-right: 10px;
+        font-size: 30px;
+        color: #000;
+        transition: color 0.3s;
+    }
+
+    .content__link:hover {
+        color: #4facfe;
+    }
+
+
+    .content__box {
+        max-width: 500px;
+        justify-self: center;
+        overflow: hidden;
+        border: 10px solid #fff;
+
+        animation: ava-animate 5s infinite alternate;
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, .5);
+    }
+
+    .content__form {
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        max-height: 500px;
+        justify-content: center;
+    }
+
+    /*.forms {*/
+    /*    width: 500px;*/
+    /*}*/
+
+    @media screen and (max-width: 978px) {
+
+        .header {
+            height: 70px;
+        }
+
+        header a {
+            font-size: 18px;
+        }
+        .content {
+            padding-top: 100px;
+        }
+
+        .content__container {
+            grid-row-gap: 20px;
+        }
+
+        .content__title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .content__subtitle {
+            font-size: 22px;
+            font-weight: 400;
+        }
+
+        .content__description {
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+
+        .content__about {
+            text-align: center;
+        }
+
+        .content__links {
+            justify-content: center;
+        }
+
+        .content__box {
+            max-width: 350px;
+            max-height: 350px;
+            justify-self: center;
+        }
+
+        .content__form {
+            display: flex;
+            overflow: hidden;
+            flex-direction: column;
+            max-width: 500px;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+    }
+
+    @media screen and (max-width: 645px) {
+        .header{
+            height: 50px;
+        }
+
+        header a {
+            font-size: 16px;
+        }
+
+        nav ul li {
+            margin-right:15px;
+        }
+
+    }
+    @media screen and (max-width: 530px) {
+        nav ul li {
+            margin-right:1px;
+        }
+
+        header a {
+            font-size: 12px;
+        }
+
+    }
+    .content__form {
+        justify-self: center;
+    }
+
+    @keyframes ava-animate {
+        0% {
+            border-radius: 69% 36% 72% 28% / 67% 31% 68% 38%;
+        }
+
+        40% {
+            border-radius: 37% 63% 53% 47% / 67% 32% 68% 33%;
+        }
+
+        60% {
+            border-radius: 26% 77% 39% 61% / 80% 54% 47% 22%;
+        }
+
+        100% {
+            border-radius: 21% 90% 29% 76% / 43% 54% 46% 57%;
+        }
+    }
+
+    input, textarea {
+        margin: 2px;
+        padding: 10px 15px;
+        background: lightgray;
+        color: black;
+        border:  1px solid black ;
+        box-sizing: border-box;
+        font-size: 16px;
+        max-width: 500px;
+
+    }
+
+
+    textarea {
+        height: 150px;
+    }
+    .button {
+        width: 125px;
+        float: right;
+    }
+
+    form p {
+        font-size: 22px;
+    }
+
+    footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        background: #f2f2f8;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    @media screen and (max-width:606px) {
+        footer {
+            display: none;
+        }
+
+    }
+
+
+    .header_now {
+        color: black;
+        font-size: 22.5px;
+        text-decoration: underline;
+    }
+
+    .dropdown {
+        position: relative;
+        /*display: inline-block;*/
+        margin: 0 25px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background: #f2f2f8;
+
+    }
+
+    /*.dropdown-content li a {*/
+    /*    display: fle;*/
+    /*    */
+    /*}*/
+
+
+    .show {display:block;}
+</style>
